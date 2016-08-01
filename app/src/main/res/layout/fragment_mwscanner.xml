@@ -1,0 +1,15 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.polyglotprogramminginc.andevconboston2016metawearclass.MWScannerFragment">
+
+    <fragment xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/metawear_blescanner_popup_fragment"
+        android:name="com.mbientlab.bletoolbox.scanner.BleScannerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/blescan_device_list" />
+
+</FrameLayout>
