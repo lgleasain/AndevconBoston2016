@@ -32,7 +32,8 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
-        BleScannerFragment.ScannerCommunicationBus, ServiceConnection {
+        BleScannerFragment.ScannerCommunicationBus, ServiceConnection,
+        MWDeviceConfirmationFragment.DeviceConfirmCallback {
 
     private MetaWearBleService.LocalBinder mwBinder = null;
     private MWScannerFragment mwScannerFragment;
@@ -195,8 +196,10 @@ public class MainActivity extends AppCompatActivity
                               }
                           }
             );
+
             if (btDeviceSelected) {
                 MWDeviceConfirmationFragment mwDeviceConfirmFragment = new MWDeviceConfirmationFragment();
+                mwDeviceConfirmFragment.flashDeviceLight(mwBoard, getFragmentManager());
                 btDeviceSelected = false;
             }
 
@@ -214,6 +217,22 @@ public class MainActivity extends AppCompatActivity
 
         }
     };
+
+    /**
+     * Device confirmation callbacks and helper methods
+     */
+
+    public void pairDevice() {
+        //addBluetoothToMenuAndConnectionStatus(bluetoothDevice.getAddress());
+
+        //heartRateSensorFragment.startSensor(mwBoard);
+    }
+
+    public void dontPairDevice() {
+        mwBoard.disconnect();
+        bluetoothDevice = null;
+        mwScannerFragment.show(getFragmentManager(), "metawear_scanner_fragment");
+    }
 
     // MetaWear Connection Helper methods
     private void connectDevice(BluetoothDevice device) {
