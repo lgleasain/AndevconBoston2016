@@ -5,6 +5,9 @@
         <item
             android:id="@+id/nav_tag"
             android:title="Meta Tag" />
+        <item
+            android:id="@+id/nav_thermistor"
+            android:title="Thermistor" />
     </group>
 
 

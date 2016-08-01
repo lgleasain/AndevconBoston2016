@@ -10,5 +10,7 @@
     <string name="dialog_yes">Yes</string>
     <string name="pairing_title">Pair Device</string>
     <string name="pairing_text">Do you see a blinking blue LED on the MetaWear?</string>
-
+    <string name="temperature_text">Temperature</string>
+    <string name="start_temperature_stream">Start Temperature Stream</string>
+    <string name="stop_temperature_stream">Stop Temperature Stream</string>
 </resources>
