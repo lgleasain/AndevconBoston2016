@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity
     private BluetoothAdapter btAdapter;
     private BluetoothDevice bluetoothDevice;
     private ThermistorFragment thermistorFragment;
+    private AccelerometerFragment accelerometerFragment;
     private MetaWearBoard mwBoard;
     private boolean btDeviceSelected;
     private final static int REQUEST_ENABLE_BT = 0;
@@ -144,6 +145,11 @@ public class MainActivity extends AppCompatActivity
             thermistorFragment.setMetaWearBoard(mwBoard);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_content, thermistorFragment).commit();
+        } else if(id == R.id.nav_accelerometer){
+            accelerometerFragment = new AccelerometerFragment();
+            accelerometerFragment.setMetaWearBoard(mwBoard);
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.main_content, accelerometerFragment).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
